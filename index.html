@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头像区域 */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+        
+        .name {
+            margin-top: 20px;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .title {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+        
+        /* 文章区域 */
+        .article-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* 社交平台区域 */
+        .social-section {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .social-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .social-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #555;
+            transition: all 0.3s ease;
+            width: 100px;
+        }
+        
+        .social-icon i {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: #3498db;
+        }
+        
+        .social-icon:hover i {
+            transform: translateY(-5px);
+        }
+        
+        .social-name {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        /* 平台特定颜色 */
+        .douyin { color: #000; }
+        .douyin:hover { color: #FE2C55; }
+        
+        .bilibili { color: #000; }
+        .bilibili:hover { color: #FB7299; }
+        
+        .qq { color: #000; }
+        .qq:hover { color: #12B7F5; }
+        
+        .tencent { color: #000; }
+        .tencent:hover { color: #0052D9; }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .avatar {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .name {
+                font-size: 1.8rem;
+            }
+            
+            .article-section {
+                padding: 25px;
+            }
+            
+            .social-icons {
+                gap: 20px;
+            }
+            
+            .social-icon {
+                width: 80px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .name {
+                font-size: 1.5rem;
+            }
+            
+            .title {
+                font-size: 1rem;
+            }
+            
+            .article-section {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .social-icons {
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 70px;
+            }
+            
+            .social-icon i {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头像区域 -->
+        <header class="header">
+            <img src="https://api.yuafeng.cn/API/qqtx/api.php?qq=3520459530" alt="个人头像" class="avatar">
+            <h1 class="name">宋佳朔</h1>
+            <p class="title">视频创作者</p>
+        </header>
+        
+        <!-- 文章区域 -->
+        <section class="article-section">
+            <h2 class="section-title">最新文章</h2>
+            <div class="article-content">
+                <p>座右铭:即使夜晚来临，也不会是终点</p>
+                
+                <p>最早的观众们知道我最早发布的视频平台不是抖音也不是小世界，而是在b站</p>
+                
+                <p>但是做了几年播放量粉丝惨不忍睹，后来24年，转到小世界和抖音（主要在小世界）那时做了几个流量特别好，粉丝涨得非常快，2000个粉丝，这就是小世界停运后的我的意难平</p>
+                
+                <p>然后到了2025年2月1号那一天小世界别提了，全是色情内容，搞得我一天饭都吃不下，后来4月2号停运了，至此2000个粉丝说没就没，最后创建频道转到抖音，到后面创作一日不如一日了</p>
+            </div>
+        </section>
+        
+        <!-- 社交平台区域 -->
+        <section class="social-section">
+            <h3 class="social-title">关注我的社交平台</h3>
+            <div class="social-icons">
+                <a href="https://v.douyin.com/PtQIjv9U0Gw/" target="_blank" class="social-icon">
+                    <i class="fab fa-tiktok douyin"></i>
+                    <span class="social-name">抖音</span>
+                </a>
+                <a href="https://space.bilibili.com/1137412460" target="_blank" class="social-icon">
+                    <i class="fab fa-bilibili bilibili"></i>
+                    <span class="social-name">B站</span>
+                </a>
+                <a href="https://api.yuafeng.cn/API/ly/tz.php?uin=3520459530" target="_blank" class="social-icon">
+                    <i class="fab fa-qq qq"></i>
+                    <span class="social-name">QQ</span>
+                </a>
+                <a href="https://pd.qq.com/s/1xmb6cpwq?b=9" target="_blank" class="social-icon">
+                    <i class="fab fa-tencent-weibo tencent"></i>
+                    <span class="social-name">腾讯频道</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 添加简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 头像加载动画
+            const avatar = document.querySelector('.avatar');
+            avatar.style.opacity = '0';
+            avatar.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                avatar.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                avatar.style.opacity = '1';
+                avatar.style.transform = 'translateY(0)';
+            }, 300);
+            
+            // 社交图标悬停效果增强
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1)';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            // 防止链接点击后页面滚动到顶部
+            document.querySelectorAll('a[href="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
